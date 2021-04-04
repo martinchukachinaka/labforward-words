@@ -1,0 +1,16 @@
+version: "3.8"
+# Share Variables
+x-logging: &default-logging
+  driver: 'json-file'
+  options:
+    max-size: '10m'
+    max-file: '3'
+x-common-service: &common-service
+  logging: *default-logging
+  restart: unless-stopped
+services:
+  words:
+    image: martinchinaka/labforward-words
+    <<: *common-service
+    ports:
+    - 8081:8081
