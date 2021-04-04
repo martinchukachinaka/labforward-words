@@ -1,0 +1,6 @@
+server:
+  port: 8081
+
+app:
+  max-length-for-similarity: 1
+  invalid-payload: "A payload is expected. Please provide a valid one"

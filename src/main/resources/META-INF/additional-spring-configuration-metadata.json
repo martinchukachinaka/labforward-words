@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "app",
+      "type": "java.util.Map",
+      "description": "Description for app."
+    }
+  ]
+}
