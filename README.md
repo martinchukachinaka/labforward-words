@@ -15,9 +15,16 @@ This project a take-home challenge provided to improve the search and observatio
 2. the splitting of the text into words for work only uses non-word characters so words like '-' will fail at the moment
 
 ### How to Application
-At the moment, you can do this by using this command -
+At the moment, you can do this by 
+
+1. Using the gradle command -
 
 ```./gradlew bootRun```
 
-The application runs on port 8081 and this can be changed from the application.yml file or passed in while starting the application
+2. Using docker-compose command:
 
+```docker-compose up -d```
+
+The application runs on port 8081 and this can be changed from the -
+- application.yml file or passed in while starting the application
+- docker-compose.yml file while using the docker-compose command
