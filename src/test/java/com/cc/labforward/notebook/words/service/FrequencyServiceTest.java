@@ -29,10 +29,15 @@ class FrequencyServiceTest {
         payload.setWord("Word");
         payload.setText("Word Words Wor word");
 
-        Integer result = frequencyService.findFrequency(payload);
+        WordPayload payload2 = new WordPayload();
+        payload2.setWord("Word");
+        payload2.setText("Word Word Word word");
 
-        assertNotNull(result);
+        Integer result = frequencyService.findFrequency(payload);
+        Integer result2 = frequencyService.findFrequency(payload2);
+
         assertThat(result).isEqualTo(1);
+        assertThat(result2).isEqualTo(3);
     }
 
 
