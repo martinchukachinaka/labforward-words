@@ -42,3 +42,9 @@ To use the APIs, please use this link -
 3. Provision of a CI/CD pipe to ensure tests pass on being merged to the master (or ideally release/staging | release/product) branch
 4. Caching of results given inputs to improve on speed for processing
 5. Converting this application to a microservice
+
+### Required User Interface
+The UI for this solution will be extremely simple - two input fields, and a submit button
+1. Word Input Field - This will be a text file taking the word to search for. Ideally, the text input field should validate for empty words
+2. Text - This will be a textarea to accommodate longer text for the input field.
+3. A submit button to submit the answer.
