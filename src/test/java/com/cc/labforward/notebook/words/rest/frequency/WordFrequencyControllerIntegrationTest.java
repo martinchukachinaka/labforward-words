@@ -1,8 +1,7 @@
-package com.cc.labforward.notebook.words.rest;
+package com.cc.labforward.notebook.words.rest.frequency;
 
+import com.cc.labforward.notebook.words.TestUtility;
 import com.cc.labforward.notebook.words.requests.WordPayload;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,25 +24,17 @@ class WordFrequencyControllerIntegrationTest {
 
 
     @Test
-    @DisplayName("POST /frequency - Success")
+    @DisplayName("POST /words/frequency - Success")
     void testGetProductByIdFound() throws Exception {
         WordPayload payload = new WordPayload();
         payload.setWord("Word");
         payload.setText("Word Words Wor word");
 
-        mockMvc.perform(post("/words/frequency").contentType(MediaType.APPLICATION_JSON).content(asJsonString(payload)))
+        mockMvc.perform(post("/words/frequency").contentType(MediaType.APPLICATION_JSON)
+                .content(TestUtility.getInstance().asJsonString(payload)))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$", is(1)));
-    }
-
-
-    private String asJsonString(WordPayload payload) {
-        try {
-            return new ObjectMapper().writeValueAsString(payload);
-        } catch (JsonProcessingException e) {
-            throw new IllegalArgumentException(e);
-        }
     }
 
 }
