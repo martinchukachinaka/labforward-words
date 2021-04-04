@@ -28,8 +28,6 @@ public class LevenshteinService {
 
         if (distances[currentWordIndex][searchWordIndex] == -1) {
             if (currentWord.charAt(currentWordIndex) == searchWord.charAt(searchWordIndex)) {
-                System.out.printf("char1: %s; char2: %s\n", currentWord.charAt(currentWordIndex),
-                        searchWord.charAt(searchWordIndex));
                 distances[currentWordIndex][searchWordIndex] = buildDistances(currentWord, currentWordIndex - 1,
                         searchWord, searchWordIndex - 1, distances);
             } else {

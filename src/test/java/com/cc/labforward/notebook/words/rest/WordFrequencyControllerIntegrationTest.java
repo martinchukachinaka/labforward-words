@@ -31,7 +31,7 @@ class WordFrequencyControllerIntegrationTest {
         payload.setWord("Word");
         payload.setText("Word Words Wor word");
 
-        mockMvc.perform(post("/frequency").contentType(MediaType.APPLICATION_JSON).content(asJsonString(payload)))
+        mockMvc.perform(post("/words/frequency").contentType(MediaType.APPLICATION_JSON).content(asJsonString(payload)))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(jsonPath("$", is(1)));
