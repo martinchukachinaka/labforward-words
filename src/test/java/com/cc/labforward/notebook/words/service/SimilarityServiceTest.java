@@ -2,7 +2,6 @@ package com.cc.labforward.notebook.words.service;
 
 import com.cc.labforward.notebook.words.config.AppConfig;
 import com.cc.labforward.notebook.words.requests.WordPayload;
-import com.cc.labforward.notebook.words.util.PayloadValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 
 
 class SimilarityServiceTest {
@@ -20,12 +18,11 @@ class SimilarityServiceTest {
 
     @BeforeEach
     void setUp() {
-        PayloadValidator payloadValidator = mock(PayloadValidator.class);
         LevenshteinService levenshteinService = new LevenshteinService();
         AppConfig config = new AppConfig();
         config.setMaxLengthForSimilarity(1);
 
-        similarityService = new SimilarityService(payloadValidator, levenshteinService, config);
+        similarityService = new SimilarityService(levenshteinService, config);
     }
 
 

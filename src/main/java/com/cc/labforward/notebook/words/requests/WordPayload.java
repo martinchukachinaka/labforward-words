@@ -2,15 +2,15 @@ package com.cc.labforward.notebook.words.requests;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 
 @Data
 public class WordPayload {
 
-    @NotNull
+    @NotBlank(message = "Please provide a word to work with")
     private String text;
 
-    @NotNull
+    @NotBlank(message = "Please provide a text to work with")
     private String word;
 }

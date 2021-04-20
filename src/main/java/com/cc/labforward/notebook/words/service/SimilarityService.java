@@ -2,7 +2,6 @@ package com.cc.labforward.notebook.words.service;
 
 import com.cc.labforward.notebook.words.config.AppConfig;
 import com.cc.labforward.notebook.words.requests.WordPayload;
-import com.cc.labforward.notebook.words.util.PayloadValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,16 +16,12 @@ import static java.util.stream.Collectors.toList;
 @RequiredArgsConstructor
 public class SimilarityService {
 
-    private final PayloadValidator payloadValidator;
-
     private final LevenshteinService levenshteinService;
 
     private final AppConfig config;
 
 
     public List<String> findSimilarWords(WordPayload request) {
-        payloadValidator.validateRequest(request);
-
         List<String> similarWords = new ArrayList<>();
 
         List<String> words = extractWordToSearch(request);

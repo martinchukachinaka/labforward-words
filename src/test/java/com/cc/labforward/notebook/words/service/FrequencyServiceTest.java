@@ -1,14 +1,11 @@
 package com.cc.labforward.notebook.words.service;
 
 import com.cc.labforward.notebook.words.requests.WordPayload;
-import com.cc.labforward.notebook.words.util.PayloadValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.mock;
 
 
 class FrequencyServiceTest {
@@ -18,7 +15,7 @@ class FrequencyServiceTest {
 
     @BeforeEach
     void setup() {
-        frequencyService = new FrequencyService(mock(PayloadValidator.class));
+        frequencyService = new FrequencyService();
     }
 
 
